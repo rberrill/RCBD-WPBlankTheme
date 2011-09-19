@@ -3,7 +3,7 @@
     <div id="primaryContent">
         <?php
         if (have_posts()) {
-            get_template_part("content", "loop");
+            get_template_part("content", "page");
         } else {
             get_template_part("content", "search");
         }

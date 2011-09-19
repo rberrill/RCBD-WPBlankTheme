@@ -20,3 +20,9 @@ function getTemplateName () {
     $template_file = array_pop(explode('/themes/', basename($template_file)));
   return $template_file . ' > '. $template_name ;
 }
+
+if (function_exists("add_theme_support")) {
+    add_theme_support('post-thumbnails');
+    add_image_size('home-page-large', 300, 300, true);
+    add_image_size('home-page-small', 100, 100, true);
+}
