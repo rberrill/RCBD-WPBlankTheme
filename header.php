@@ -39,7 +39,7 @@
                             'menu_class' => 'sf-menu', //Adding the class for dropdowns
                             'container_id' => 'navwrap', //Add CSS ID to the containter that wraps the menu.
                             'container_class' => 'menu-header',
-                            'fallback_cb' => '', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
+                            'fallback_cb' => 'primaryMenu', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
                                 )
                         );
                     ?>

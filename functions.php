@@ -29,7 +29,18 @@ if (function_exists("add_theme_support")) {
 
 register_nav_menu('primary','Primary Menu');
 
-function add_our_scripts() {
+function primaryMenu() {
+    echo '<div id="navwrap" class="menu-header"><ul id="menu-primary" class="sf-menu">';
+    echo wp_list_pages(array(
+                            'depth' => 0,
+                            'echo' => false,
+                            'sort_column'  => 'menu_order',
+                            'title_li' => null,
+                        ));
+    echo '</ul></div>';
+}
+
+function addOurScripts() {
     if (!is_admin()) { // Add the scripts, but not to the wp-admin section.
         // Adjust the below path to where scripts dir is, if you must.
         $scriptdir = get_stylesheet_directory_uri()."/js/";
@@ -50,4 +61,5 @@ function add_our_scripts() {
         wp_enqueue_script('sf_load');
     } // end the !is_admin function
 } //end add_our_scripts function
-add_action( 'wp_head', 'add_our_scripts',0);
+
+add_action( 'wp_head', 'addOurScripts',0);
