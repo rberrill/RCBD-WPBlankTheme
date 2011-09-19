@@ -33,7 +33,16 @@
                     <h2><?php bloginfo( 'description' ); ?></h2>
                 </hgroup>
                 <nav id="header">
-                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                    <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary', // Setting up the location for the main-menu, Main Navigation.
+                            'menu_class' => 'sf-menu', //Adding the class for dropdowns
+                            'container_id' => 'navwrap', //Add CSS ID to the containter that wraps the menu.
+                            'container_class' => 'menu-header',
+                            'fallback_cb' => '', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
+                                )
+                        );
+                    ?>
                 </nav>
             </div>
         </header>
