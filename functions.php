@@ -1,6 +1,9 @@
 <?php
 
-// Helper function when settings up the site to see what template is actually being loaded
+/************************************************************
+ * Helper function when setting up the site to see what 
+ * template is actually being loaded
+ */
 
 function getTemplateName () {
     foreach ( debug_backtrace() as $called_file ) {
